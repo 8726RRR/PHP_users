@@ -14,6 +14,7 @@
             <div class="row mt-2">
                 <h1 class="col-sm-12 text-center text-primary">ユーザー一覧</h1>
             </div>
+            <?php include_once 'views/_flush_view1.php'?>
             <?php if(count($users) !== 0): ?>
             <div class="row mt-2">
                 <p class="col-sm-12 text-center text-success">現在のユーザーは<?= count($users)?>人</p>

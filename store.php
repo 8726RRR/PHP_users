@@ -12,9 +12,24 @@
     
     // 入力された値をもとに新しいユーザーを作成
     $user = new User($name, $age, $gender);
-    // var_dump($user)
+    // 入力された値の検証
+    $errors = $user->validate();
+    // 入力エラーが一つもなければ新規登録させたい
+    if(count($errors) === 0) {
+        //セッションからユーザー一覧を取得
+        $users = $_SESSION['users'];
+        $users[] = $user;
+        $_SESSION['users'] = $users; // 新規ユーザーが入ったものを再保存
+        $_SESSION['flush'] = $user->name . 'さんが登録されました';
+        // ユーザー一覧へリダイレクト
+        header('Location: index.php');
+        exit;
+    } else {
+        // 入力のし直し
+        $_SESSION['errors'] = $errors;
+        $_SESSION['user'] = $user;
+        header('Location: create.php');
+        exit;
+    }
+    // var_dump($errors);
     // 目標
-    // セッションからユーザー一覧を取得
-    $users = $_SESSION['users'];
-    $users[] = $user;
-    var_dump($users);
