@@ -1,7 +1,8 @@
 <?php
     //(C-3)
+    require_once "filters/csrf_filter.php";
     require_once "models/User.php";
-    session_start();
+    // session_start();
     // $_POST はページ間をまたいで飛んでくる連想配列
     // var_dump($_POST);
     $name = $_POST['name'];
@@ -17,10 +18,13 @@
     // 入力エラーが一つもなければ新規登録させたい
     if(count($errors) === 0) {
         //セッションからユーザー一覧を取得
-        $users = $_SESSION['users'];
-        $users[] = $user;
-        $_SESSION['users'] = $users; // 新規ユーザーが入ったものを再保存
-        $_SESSION['flush'] = $user->name . 'さんが登録されました';
+        // $users = $_SESSION['users'];
+        // $users[] = $user;
+        // $_SESSION['users'] = $users; // 新規ユーザーが入ったものを再保存
+        // $_SESSION['flush'] = $user->name . 'さんが登録されました';
+        // データベースに新しいユーザーを登録
+        $flush = $user->save();
+        $_SESSION['flush'] = $flush;
         // ユーザー一覧へリダイレクト
         header('Location: index.php');
         exit;
