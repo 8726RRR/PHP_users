@@ -36,4 +36,3 @@
         exit;
     }
     // var_dump($errors);
-    // 目標

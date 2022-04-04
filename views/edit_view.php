@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body style="background-image:url(images/bg.jpg)">
         <div class="container">
             <div class="row mt-3">
                 <h1 class="col-sm-12 text-center text-primary pb-1"><?= $user->name ?>さんの編集</h1>

@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body style="background-image:url(images/bg.jpg)">
         <!--ビュー(V)-->
         <div class="container">
             <div class="row mt-2">
