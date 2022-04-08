@@ -1,7 +1,7 @@
 <?php
     require_once 'models/Model.php';
     // モデル(M)
-    // ユーザーの設計図を
+    // ユーザーの設計図
     class User extends Model {
         // プロパティ
         public $name; //名前
@@ -27,12 +27,12 @@
         public function validate() {
             $errors = array();
             if($this->name === '') {
-                $errors[] = '名前を入力してください';
+                $errors[] = '※名前を入力してください';
             }
             if($this->age === '') {
-                $errors[] = '年齢を入力してください';
+                $errors[] = '※年齢を入力してください';
             } else if(!preg_match('/^[0-9]+$/', $this->age)) {
-                $errors[] = '年齢は正の整数を入力してください';
+                $errors[] = '※年齢は正の整数を入力してください';
             }
             return $errors;
         }
@@ -127,6 +127,7 @@
             }
         }
         
+        // インスタンスのメソッドとの書き方や論理を比較するためにstaticメソッドも記入。
         public static function destroy($id) {
             try {
                 $pdo = self::get_connection();

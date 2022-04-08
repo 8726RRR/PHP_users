@@ -24,11 +24,6 @@
     $errors = $user->validate();
     // 入力エラーが一つもなければ新規登録させたい
     if(count($errors) === 0) {
-        //セッションからユーザー一覧を取得
-        // $users = $_SESSION['users'];
-        // $users[] = $user;
-        // $_SESSION['users'] = $users; // 新規ユーザーが入ったものを再保存
-        // $_SESSION['flush'] = $user->name . 'さんが登録されました';
         // データベースに新しいユーザーを登録
         $flush = $user->save();
         $_SESSION['flush'] = $flush;
@@ -43,4 +38,3 @@
         exit;
     }
     // var_dump($errors);
-    // 目標

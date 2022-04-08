@@ -12,18 +12,18 @@
         <!--ビュー(V)-->
         <div class="container">
             <div class="row mt-2">
-                <h1 class="col-sm-12 text-center text-primary"><?= $user->name?>さんの詳細</h1>
+                <h1 class="col-sm-12 text-center text-primary mt-4"><?= $user->name?>さんの詳細</h1>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-5">
                 <table class="table table-bordered table-striped">
-                    <tr>
+                    <tr class="text-center">
                         <th>ID</th>
-                        <th class="text-center">名前</th>
+                        <th>名前</th>
                         <th>年齢</th>
                         <th>性別</th>
                         <th>お酒</th>
                     </tr>
-                    <tr>
+                    <tr class="text-center">
                         <!--クエリーパラメーター-->
                         <td><?= $user->id ?></td>
                         <td><?= $user->name ?></td>
@@ -33,16 +33,18 @@
                     </tr>
                 </table>
             </div>
-            <div class="row">
-                <a href="index.php" class="offset-sm-3 col-sm-6 btn btn-primary">ユーザー一覧に戻る</a>
+            <div class="row mt-5">
+                <a href="edit.php?id=<?= $user->id ?>" class="offset-sm-3 col-sm-6 btn btn-success">編集</a>
             </div>
-            <div class="row mt-3">
-                <a href="edit.php?id=<?= $user->id ?>" class="offset-sm-1 col-sm-4 btn btn-success">編集</a>
-                <form class="offset-sm-2 col-sm-4 row" action="destroy.php" method="POST">
+            <div class="row">
+                <form class="col-sm-12 p-0" action="destroy.php" method="POST">
                     <input type="hidden" name="id" value="<?= $user->id ?>"/>
                     <input type="hidden" name="_token" value="<?= $token ?>"/>
-                    <button class="col-sm-12 btn btn-danger" type="submit" onclick="return confirm('本当に削除しますか?')">削除</button>
+                    <button class="offset-sm-3 col-sm-6 btn btn-danger mt-4" type="submit" onclick="return confirm('本当に削除しますか?')">削除</button>
                 </form>
+            </div>
+            <div class="row mt-4">
+                <a href="index.php" class="offset-sm-3 col-sm-6 btn btn-primary">ユーザー一覧に戻る</a>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

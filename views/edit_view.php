@@ -11,9 +11,9 @@
     <body style="background-image:url(images/bg.jpg)">
         <div class="container">
             <div class="row mt-3">
-                <h1 class="col-sm-12 text-center text-primary pb-1"><?= $user->name ?>さんの編集</h1>
+                <h1 class="col-sm-12 text-center text-primary pb-1 mt-3 mb-3"><?= $user->name ?>さんの編集</h1>
             </div>
-            <?php include_once 'views/_errors_view1.php';?>
+            <?php include_once 'views/_errors_view.php';?>
             <div class="row mt-3">
                 <form class="col-sm-12" action="update.php" method="POST">
                     <!-- 1行 -->
@@ -35,7 +35,7 @@
                     <!-- 1行 -->
                     <div class="mt-3 row">
                         <p class="col-2 col-form-label">性別</p> 
-                        <div class="form-check form-check-inline col-3">
+                        <div class="form-check form-check-inline col-3 ml-3">
                             <input class="form-check-input" type="radio" name="gender" id="male" value="male" <?= $user->gender === 'male' ? 'checked' : '' ?>>
                             <label class="form-check-label" for="male">男性</label>
                         </div>
@@ -46,10 +46,8 @@
                     </div>
                     
                     <!-- 1行 -->
-                    <div class="mb-3 row mt-3">
-                        <div class="offset-2 col-10 row">
-                            <button type="submit" class="col-sm-12 btn btn-primary">更新</button>
-                        </div>
+                    <div class="row mt-5 mb-3">
+                        <button type="submit" class="offset-sm-3 col-sm-6 btn btn-primary">更新</button>
                     </div>
                     <input type="hidden" name="_token" value="<?= $token ?>">
                     <input type="hidden" name="id" value="<?= $user-> id ?>"/>
@@ -58,7 +56,7 @@
             </div>
             
             <div class="row mt-3">
-                <a href="show.php?id=<?= $user->id ?>" class=" offset-sm-3 col-sm-6 btn btn-danger"><?= $user->name ?>さんの詳細へ戻る</a>
+                <a href="show.php?id=<?= $user->id ?>" class="offset-sm-3 col-sm-6 btn btn-danger"><?= $user->name ?>さんの詳細へ戻る</a>
             </div>
         </div>
             

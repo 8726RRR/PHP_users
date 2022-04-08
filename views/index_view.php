@@ -12,26 +12,28 @@
         <!--ビュー(V)-->
         <div class="container">
             <div class="row mt-2">
-                <h1 class="col-sm-12 text-center text-primary">ユーザー一覧</h1>
+                <h1 class="col-sm-12 text-center text-primary mt-3 mb-3">ユーザー一覧</h1>
             </div>
-            <?php include_once 'views/_flush_view1.php'?>
+            
+            <?php include_once 'views/_flush_view.php'?>
+            
             <?php if(count($users) !== 0): ?>
             <div class="row mt-2">
-                <p class="col-sm-12 text-center text-success">現在のユーザーは<?= count($users)?>人</p>
+                <p class="col-sm-12 text-center text-success">現在のユーザーは<?= count($users)?>人です。</p>
             </div>
             <div class="row mt-2">
                 <table class="table table-bordered table-striped">
-                    <tr>
+                    <tr class="text-center">
                         <th>ID</th>
-                        <th class="text-center">名前</th>
+                        <th>名前</th>
                         <th>年齢</th>
                         <th>性別</th>
                         <th>お酒</th>
                     </tr>
                     <?php foreach($users as $user): ?>
-                    <tr>
+                    <tr class="text-center">
                         <!--クエリーパラメーター-->
-                        <td><a href="show.php?id=<?= $user->id ?>"><?= $user->id ?></a></td>
+                        <td><a href="show.php?id=<?= $user->id ?>" id="id"><?= $user->id ?></a></td>
                         <td><?= $user->name ?></td>
                         <td><?= $user->age ?>歳</td>
                         <td><?= $user->gender === 'male' ? '男性' : '女性' ?></td>
@@ -41,10 +43,10 @@
                 </table>
             </div>
             <?php else: ?>
-                <p class="col-sm-12 text-center text-danger">ユーザーがまだいません。</p>
+                <p class="col-sm-12 text-center text-danger mt-3" id="announce">※ユーザーはいません。</p>
             <?php endif; ?>
-            <div class="row">
-                <a href="create.php" class="btn btn-primary">新規ユーザー登録</a>
+            <div class="row mt-5">
+                <a href="create.php" class="offset-sm-3 col-sm-6 btn btn-primary">新規ユーザー登録</a>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

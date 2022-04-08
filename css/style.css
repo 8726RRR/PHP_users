@@ -1,37 +1,36 @@
 @charset "utf-8";
 
-/* パソコン、タブレット */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*h1 {*/
-/*    color: blue;*/
-/*}*/
+h1 {
+    font-size: 34px;
+}
 
-/*table, tr, th, td {*/
-/*    border: solid 1px black;*/
-/*}*/
+/* IDのクリックを分かりやすく設定 */
+#id {
+    padding: 10px;
+}
 
-/*タブレット 縦のみ	*/
-@media screen and (max-width: 1024px) and (orientation: portrait){
-    
+#id:hover {
+    cursor: pointer;
+    color: #fff;
+    background: #4689FF;
 }
-/* タブレット 縦から */
-@media screen and (max-width: 1024px){
-    
+
+/* ユーザー登録時、削除時、ユーザーの人数、ユーザーが誰もいないときのメッセージ強調 */
+#announce {
+   font-weight: bold; 
 }
-/* スマホ 横のみ */
-@media screen and (max-width: 896px) and (orientation: landscape){
-    
+
+/* エラーメッセージの強調 */
+#errors {
+    font-weight: bold;
 }
-/* スマホ 横から */ 
-@media screen and (max-width: 896px){
-    
-}
-/* スマホ　縦からは */
-@media screen and (max-width: 480px){
-    
+
+#errors ul li {
+    list-style: none;
 }
