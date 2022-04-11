@@ -1,5 +1,5 @@
 <?php
-    // (C-4)
+    // (C)
     require_once 'models/User.php';
     session_start();
     // var_dump($_GET);

@@ -1,12 +1,9 @@
 <?php
-    //(C-3)
+    //(C)
     require_once "filters/csrf_filter.php";
     require_once "models/User.php";
-    // session_start();
     // $_POST はページ間をまたいで飛んでくる連想配列
-    // var_dump($_POST);
     $name = $_POST['name'];
-    // print $name;
     // create_view.phpのフォームで入力された値を取得
     $age = $_POST['age'];
     $gender = $_POST['gender'];
@@ -30,4 +27,3 @@
         header('Location: create.php');
         exit;
     }
-    // var_dump($errors);

@@ -1,11 +1,10 @@
 <?php
-    // コントローラー(C-1)
+    // コントローラー(C)
     // 外部ファイルの読み込み
     require_once 'models/User.php';
     // セッション開始
     session_start();
     
-    // $users = $_SESSION['users'];
     $flush = $_SESSION['flush'];
     $_SESSION['flush'] = null;
     

@@ -13,9 +13,8 @@
             $this->name = $name;
             $this->age = $age;
             $this->gender = $gender;
-            // print $this->name . 'が生まれた' . PHP_EOL;
-            // print "{$this->name}が生まれた\n"; //""で記入。
         }
+        
         public function drink() {
             if($this->age >= 20){
                 return 'お酒OK' .PHP_EOL;

@@ -1,7 +1,6 @@
 <?php
     require_once 'models/User.php';
-    // (C-2)
-    // print 'ok';
+    // (C)
     // ビューの表示
     session_start();
     $errors = $_SESSION['errors'];
