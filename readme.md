@@ -15,7 +15,7 @@ Herokuにデプロイしておりますので、ぜひ操作してみてくだ�
 - MySQL 5.5.62
 - バージョン管理 Git / GitHub
 - デプロイ Heroku
-- Herokuにデプロイしたもの: https://samurai-php-users.herokuapp.com/
+- Herokuにデプロイしたもの: https://happy-php-users.herokuapp.com/
 
 ## 3. 機能一覧
 - ユーザー一覧表示機能
