@@ -13,7 +13,7 @@
                 );
                 
                 // $pdo = new PDO('mysql:host=localhost;dbname=user_register', 'root', '', $options);
-                $pdo = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;dbname=heroku_1527c4f3aaedb6e', 'b71bffd3a5e534', '1f3523c1', $options);
+                $pdo = new PDO('mysql:host=us-cdbr-east-06.cleardb.net;dbname=heroku_e1efbf169b7afb4', 'b79714096a8d12', '2ce6586f', $options);
                 return $pdo;
                 
             } catch (PDOException $e) {
